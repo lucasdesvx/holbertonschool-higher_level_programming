@@ -1,4 +1,3 @@
 #!/usr/bin/python3
-if i in range(97, 123):
-    if char != 101 and char != 113:
-        print("{:c}".format(char), end="")
+for number in range(0, 99):
+    print("{} = 0x{:x}".format(number, number))
