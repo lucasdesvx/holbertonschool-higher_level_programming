@@ -6,7 +6,7 @@ class Square:
     """Classe Square qui définit un carré"""
 
     def __init__(self, size=0):
-        """Initialisation du carré avec size"""
+        """Initialisation du carré"""
         self.size = size
 
     @property
@@ -26,3 +26,12 @@ class Square:
     def area(self):
         """Retourne l'aire actuelle du carré"""
         return self.__size ** 2
+
+    def my_print(self):
+        """Affiche le carré avec le caractère #"""
+        if self.__size == 0:
+            print("")
+            return
+
+        for i in range(self.__size):
+            print("#" * self.__size)
