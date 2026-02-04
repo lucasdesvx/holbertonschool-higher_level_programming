@@ -1,0 +1,35 @@
+The ``1-my_list`` module
+========================
+
+Using ``MyList``
+----------------
+Import the class:
+    >>> MyList = __import__('1-my_list').MyList
+
+Instantiate the class:
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+Test print_sorted():
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+Check that the original list is still unsorted:
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+Test with strings (though the task says assume int, it's good practice):
+    >>> l_str = MyList(['b', 'c', 'a'])
+    >>> l_str.print_sorted()
+    ['a', 'b', 'c']
+
+Test with an empty list:
+    >>> empty = MyList()
+    >>> empty.print_sorted()
+    []
