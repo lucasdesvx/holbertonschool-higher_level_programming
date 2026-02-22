@@ -2,7 +2,6 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-# In-memory storage for users
 users = {}
 
 @app.route("/")
@@ -22,7 +21,8 @@ def get_user(username):
     user = users.get(username)
     if user:
         return jsonify(user)
-    return jsonify({"error": "User find"}), 404
+    # Fixed the typo here: "User find" -> "User not found"
+    return jsonify({"error": "User not found"}), 404
 
 @app.route("/add_user", methods=["POST"])
 def add_user():
