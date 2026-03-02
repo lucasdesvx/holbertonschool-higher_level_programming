@@ -1,2 +1,2 @@
 -- that deletes the database
-CREATE VIEW DATABASE THAT DELETE `hbtn_0c_0`; 
+DROP DATABASE IF EXITS hbtn_0c_0;
