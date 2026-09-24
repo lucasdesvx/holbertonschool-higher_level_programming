@@ -1,22 +1,27 @@
 #!/usr/bin/python3
-"""Define a Student class that can be serialized and reloaded."""
+"""Module that defines a Student class with reload capabilities."""
 
 
 class Student:
-    """Represent a student."""
+    """Defines a student by first_name, last_name, and age."""
 
     def __init__(self, first_name, last_name, age):
+        """Initializes a new Student instance."""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        """Return all attributes or only the requested attributes."""
-        if isinstance(attrs, list):
-            return {key: self.__dict__[key] for key in attrs
-                    if key in self.__dict__}
+        """Retrieves a dictionary representation of a Student instance.
+
+        If attrs is a list of strings, only attribute names contained
+        in this list are retrieved. Otherwise, all attributes are retrieved.
+        """
+        if isinstance(attrs, list) and all(isinstance(x, str) for x in attrs):
+            return {k: v for k, v in self.__dict__.items() if k in attrs}
         return self.__dict__
 
     def reload_from_json(self, json):
-        """Replace the student's attributes with values from a dictionary."""
-        self.__dict__.update(json)
+        """Replaces all attributes of the Student instance with those in json."""
+        for key, value in json.items():
+            setattr(self, key, value)
