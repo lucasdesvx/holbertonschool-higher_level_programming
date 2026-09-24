@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""Append a string to a UTF-8 text file."""
+"""Module for appending a string to a text file."""
 
 
 def append_write(filename="", text=""):
-    """Append text to filename and return the number of characters added."""
-    with open(filename, "a", encoding="utf-8") as file:
-        return file.write(text)
-
+    """Appends a string to a UTF8 text file and returns the character count."""
+    with open(filename, 'a', encoding='utf-8') as f:
+        return f.write(text)
