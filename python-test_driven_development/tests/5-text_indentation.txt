@@ -1,0 +1,35 @@
+====================
+Text indentation
+====================
+
+Import the function:
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Print text with two newlines after each selected punctuation mark:
+>>> text_indentation("Hello. World? Again: done")
+Hello.
+<BLANKLINE>
+World?
+<BLANKLINE>
+Again:
+<BLANKLINE>
+done
+
+Trim whitespace around each printed line:
+>>> text_indentation("  Hello.   World?  ")
+Hello.
+<BLANKLINE>
+World?
+<BLANKLINE>
+
+>>> text_indentation("first line\n   second line")
+first line
+second line
+
+Print nothing for empty text:
+>>> text_indentation("")
+
+Reject values that are not strings:
+>>> text_indentation(42)
+Traceback (most recent call last):
+TypeError: text must be a string
