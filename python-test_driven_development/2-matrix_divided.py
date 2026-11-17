@@ -3,7 +3,7 @@
 
 
 def matrix_divided(matrix, div):
-    """Return a new matrix with each value divided and rounded to 2 decimals."""
+    """Divide each matrix value by div and round to two decimals."""
     if not isinstance(matrix, list) or not all(
             isinstance(row, list) for row in matrix):
         raise TypeError(
