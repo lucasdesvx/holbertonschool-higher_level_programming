@@ -5,6 +5,15 @@ Text indentation
 Import the function:
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
+Check that plain text has no final newline:
+>>> import io
+>>> from contextlib import redirect_stdout
+>>> output = io.StringIO()
+>>> with redirect_stdout(output):
+...     text_indentation("Holberton School")
+>>> output.getvalue()
+'Holberton School'
+
 Print text with two newlines after each selected punctuation mark:
 >>> text_indentation("Hello. World? Again: done")
 Hello.

@@ -24,4 +24,4 @@ def text_indentation(text):
 
     line = text[start:].strip()
     if line:
-        print("\n".join(part.strip() for part in line.splitlines()))
+        print("\n".join(part.strip() for part in line.splitlines()), end="")
