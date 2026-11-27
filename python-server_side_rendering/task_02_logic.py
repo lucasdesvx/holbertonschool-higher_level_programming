@@ -15,7 +15,7 @@ def items():
     data_path = Path(__file__).with_name("items.json")
     with data_path.open(encoding="utf-8") as file:
         data = json.load(file)
-    return render_template("items.html", items=data["items"])
+    return render_template("items.html", items=data.get("items", []))
 
 
 if __name__ == "__main__":
